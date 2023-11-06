@@ -21,7 +21,7 @@ const Currency = ({ title, currencies, inCurrency, outCurrency, exchangeRate }) 
           onChange={({ target }) => setCurrency(target.value)}
         >
           {currencies.map((currency) => (
-            <option input={exchangeRate} value={currency.number}>
+            <option input={exchangeRate} key={currency.number} value={currency.number}>
               {currency.name}
             </option>
           ))}
