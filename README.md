@@ -5,7 +5,7 @@
 ## Description
 This is the currency converter that allows you to amount currencies between 4 types: PLN, EUR, GBP and USD.
 
-If you want to check, clik [here](https://doncochino.github.io/currency-converter/).
+If you want to check, clik [here](https://doncochino.github.io/currency-converter-react/).
 
 ## Technologies:
 - HTML
