@@ -1,0 +1,9 @@
+.result {
+    font-weight: bold;
+    height: 0px;
+    width: 100%;
+    max-width: 174.5px;
+    margin-top: 14.5px;
+    display: inline-block;
+    text-align: right;
+}
