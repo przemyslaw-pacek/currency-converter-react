@@ -12,7 +12,6 @@ If you want to check, clik [here](https://doncochino.github.io/currency-converte
 - CSS
 - BEM
 - JavaScript
-- MediaQueries
 - Immutability
 - React
 
