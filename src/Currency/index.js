@@ -1,33 +1,30 @@
-import { useState } from "react";
 import "./style.css";
 import "../App.js"
 
-const Currency = ({ title, currencies, inCurrency, outCurrency, exchangeRate }) => {
-  const [currency, setCurrency] = useState();
+const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) => {
 
   const onFormSubmit = (event) => {
-    event.preventDefault();
-    inCurrency(currency());
-    outCurrency(currency());
+   event.preventDefault();
   };
 
   return (
-    <p>
-      <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit}>
+      <p>
         <span className="title">{title}</span>
-        <select
+        <select 
           className="currency"
+          onClick={exchangeRate}
           value={currency}
           onChange={({ target }) => setCurrency(target.value)}
         >
           {currencies.map((currency) => (
-            <option input={exchangeRate} key={currency.number} value={currency.number}>
+            <option key={currency.number} value={currency.number}>
               {currency.name}
             </option>
           ))}
         </select>
-      </form>
-    </p>
+      </p>
+    </form>
   );
 };
 
