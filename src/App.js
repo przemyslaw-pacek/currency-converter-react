@@ -5,14 +5,9 @@ import Currency from "./Currency";
 import Amount from "./Amount";
 import Rate from "./Rate";
 import Result from "./Result";
+import currencies from "./currencies";
 
 function App() {
-  const currencies = [
-    { name: "PLN", number: 1, symbol: "zł" },
-    { name: "EUR", number: 4.46, symbol: "€" },
-    { name: "GBP", number: 5.19, symbol: "£" },
-    { name: "USD", number: 3.97, symbol: "$" },
-  ];
   const [amount, setAmount] = useState("")
   const [inCurrency, setInCurrency] = useState(4.46);
   const [outCurrency, setOutCurrency] = useState(1);
@@ -24,12 +19,12 @@ function App() {
   };
 
   const count = () => {
-    const symbol = currencies.find(({ number }) => number === outCurrency).symbol;
+    const symbolCurrency = currencies.find(({ number }) => number === outCurrency).symbol;
 
-    setResult(
-      (amount * rate),
-      (symbol)
-    );
+    setResult({
+      resultAmount: amount * rate,
+      symbolCurrency
+    });
   };
 
   return (

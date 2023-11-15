@@ -4,9 +4,13 @@ const Result = ({ title, result }) => (
     <p>
         <span className="title">{title}</span>
         <p className="result">
-            {result}
+            {result && (
+                <>
+                    {result.resultAmount.toFixed(2)} {result.symbolCurrency}
+                </>
+            )}
         </p>
     </p>
-);
+)
 
 export default Result;
