@@ -1,5 +1,4 @@
 import "./style.css";
-import "../App.js"
 
 const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) => {
 
