@@ -9,9 +9,9 @@ import currencies from "./currencies";
 
 function App() {
   const [amount, setAmount] = useState("")
-  const [inCurrency, setInCurrency] = useState(4.46);
-  const [outCurrency, setOutCurrency] = useState(1);
-  const [rate, setRate] = useState(4.46);
+  const [inCurrency, setInCurrency] = useState(currencies[1].number);
+  const [outCurrency, setOutCurrency] = useState(currencies[0].number);
+  const [rate, setRate] = useState(currencies[1].number);
   const [result, setResult] = useState("");
 
   const exchangeRate = () => {
