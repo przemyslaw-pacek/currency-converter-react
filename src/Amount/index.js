@@ -1,13 +1,9 @@
 import "./style.css";
 
 const Amount = ({ title, amount, setAmount }) => {
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-    };
-
+    
     return (
-        <form onSubmit={onFormSubmit}>
+        <p>
             <span className="title">{title}</span>
             <input
                 className="amount"
@@ -17,7 +13,7 @@ const Amount = ({ title, amount, setAmount }) => {
                 value={amount}
                 onChange={({ target }) => setAmount(target.value)}
             />
-        </form>
+        </p>
     );
 };
 

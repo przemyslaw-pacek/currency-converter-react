@@ -2,15 +2,10 @@ import "./style.css";
 
 const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) => {
 
-  const onFormSubmit = (event) => {
-   event.preventDefault();
-  };
-
   return (
-    <form onSubmit={onFormSubmit}>
       <p>
         <span className="title">{title}</span>
-        <select 
+        <select
           className="currency"
           onClick={exchangeRate}
           value={currency}
@@ -23,7 +18,6 @@ const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) =>
           ))}
         </select>
       </p>
-    </form>
   );
 };
 
