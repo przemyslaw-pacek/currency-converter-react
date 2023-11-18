@@ -21,10 +21,10 @@ function App() {
   const count = () => {
     const symbolCurrency = currencies.find(({ rate }) => rate === +outCurrency).symbol;
 
-    setResult({
+    setResult(amount > 0 && !"" ? {
       resultAmount: amount * rate,
       symbolCurrency
-    });
+    } : null);
   };
 
   return (
