@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Rate = ({ title, rate, count }) => (
-    <p className="top">
+    <label>
         <span className="title">
             {title}
             <strong>{rate.toFixed(2)}</strong>
@@ -9,7 +9,7 @@ const Rate = ({ title, rate, count }) => (
         <button onClick={count} className="button">
             Przelicz
         </button>
-    </p>
+    </label>
 );
 
 export default Rate;
