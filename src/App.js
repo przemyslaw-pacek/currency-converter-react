@@ -9,9 +9,9 @@ import currencies from "./currencies";
 
 function App() {
   const [amount, setAmount] = useState("")
-  const [inCurrency, setInCurrency] = useState(currencies[1].number);
-  const [outCurrency, setOutCurrency] = useState(currencies[0].number);
-  const [rate, setRate] = useState(currencies[1].number);
+  const [inCurrency, setInCurrency] = useState(currencies[1].rate);
+  const [outCurrency, setOutCurrency] = useState(currencies[0].rate);
+  const [rate, setRate] = useState(currencies[1].rate);
   const [result, setResult] = useState("");
 
   const exchangeRate = () => {
@@ -19,7 +19,7 @@ function App() {
   };
 
   const count = () => {
-    const symbolCurrency = currencies.find(({ number }) => number === +outCurrency).symbol;
+    const symbolCurrency = currencies.find(({ rate }) => rate === +outCurrency).symbol;
 
     setResult({
       resultAmount: amount * rate,
