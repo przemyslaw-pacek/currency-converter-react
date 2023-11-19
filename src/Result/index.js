@@ -1,12 +1,12 @@
 import "./style.css";
 
 const Result = ({ title, result }) => (
-    <label>
-        <span className="title bottom">{title}</span>
-        <p className="result">
+    <p>
+        <span className="title">{title}</span>
+        <strong className="result">
             {result ? `${result.resultAmount.toFixed(2)} ${result.symbolCurrency}` : null}
-        </p>
-    </label>
+        </strong>
+    </p>
 )
 
 export default Result;
