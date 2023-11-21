@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Container from "./Container";
+import Form from "./Form";
 import Header from "./Header";
 import Currency from "./Currency";
 import Amount from "./Amount";
@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <Container>
+    <Form>
       <Header title="Kalkulator walut" />
       <Currency
         title="Waluta do przeliczenia"
@@ -58,7 +58,7 @@ function App() {
         title="Kwota po przeliczeniu:"
         result={result}
       />
-    </Container>
+    </Form>
   );
 };
 export default App;

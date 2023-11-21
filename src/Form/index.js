@@ -1,6 +1,6 @@
 import './style.css';
 
-const Container = ({ children }) => {
+const Form = ({ children }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -9,11 +9,11 @@ const Container = ({ children }) => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <fieldset className="container">
+            <fieldset className="form">
                 {children}
             </fieldset>
         </form>
     );
 };
 
-export default Container;
+export default Form;
