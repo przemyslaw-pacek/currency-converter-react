@@ -21,14 +21,14 @@ function App() {
   const count = () => {
     const symbolCurrency = currencies.find(({ rate }) => rate === +outCurrency).symbol;
 
-    setResult(amount > 0 && {
+    setResult({
       resultAmount: amount * rate,
       symbolCurrency
     });
   };
 
   return (
-    <Form>
+    <Form onSubmit={count}>
       <Header title="Kalkulator walut" />
       <Currency
         title="Waluta do przeliczenia"
@@ -52,7 +52,6 @@ function App() {
       <Rate
         title="Kurs wymiany: "
         rate={rate}
-        count={count}
       />
       <Result
         title="Kwota po przeliczeniu:"
