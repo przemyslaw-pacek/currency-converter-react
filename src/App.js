@@ -43,7 +43,7 @@ function App() {
     <Form onSubmit={count}>
       <Header title="Kalkulator walut" />
       <Clock
-        title="Dzisiaj jest "
+        text="Dzisiaj jest "
         clock={clock}
       />
       <Currency

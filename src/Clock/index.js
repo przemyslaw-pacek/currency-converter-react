@@ -1,8 +1,8 @@
 import "./style.css";
 
-const Clock = ({ title, clock }) => (
+const Clock = ({ text, clock }) => (
     <p className="clock">
-        {title}<span>
+        {text}<span>
             {clock = (new Date()).toLocaleString(undefined, {
                 weekday: "long",
                 day: "numeric",
