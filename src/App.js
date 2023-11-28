@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Form from "./Form";
 import Header from "./Header";
 import Clock from "./Clock";
@@ -9,22 +9,11 @@ import Result from "./Result";
 import currencies from "./currencies";
 
 function App() {
-  const [clock, setClock] = useState([])
-  const [amount, setAmount] = useState("")
+  const [amount, setAmount] = useState("");
   const [inCurrency, setInCurrency] = useState(currencies[1].rate);
   const [outCurrency, setOutCurrency] = useState(currencies[0].rate);
   const [rate, setRate] = useState(currencies[1].rate);
   const [result, setResult] = useState("");
-
-  useEffect(() => {
-    const intervalClock = setInterval(() => {
-      setClock({ clock });
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalClock);
-    };
-  }, [clock]);
 
   const exchangeRate = () => {
     setRate(inCurrency / outCurrency);
@@ -44,7 +33,6 @@ function App() {
       <Header title="Kalkulator walut" />
       <Clock
         text="Dzisiaj jest "
-        clock={clock}
       />
       <Currency
         title="Waluta do przeliczenia"
