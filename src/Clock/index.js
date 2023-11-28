@@ -13,7 +13,6 @@ const Clock = ({ text }) => {
             setClock(formatClock);
         }, 1000);
 
-
         return () => {
             clearInterval(intervalClock);
         };
