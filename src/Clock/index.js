@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react";
-import format from "./format";
 import "./style.css";
 
-const Clock = ({ text }) => {
-    const [clock, setClock] = useState("");
+const Clock = () => {
+    const [clock, setClock] = useState(new Date());
+
+    const formatClock = () =>
+        new Date().toLocaleString(undefined, {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric"
+        });
 
     useEffect(() => {
-        const date = new Date();
-        const formatClock = date.toLocaleString(undefined, format);
-
         const intervalClock = setInterval(() => {
-            setClock(formatClock);
+            setClock(new Date());
         }, 1000);
 
         return () => {
             clearInterval(intervalClock);
         };
-    }, [clock]);
+    });
 
     return (
         <p className="clock">
-            {text}<span>
-                {clock}
-            </span>
+            Dzisiaj jest {formatClock(clock)}
         </p>
     );
 };

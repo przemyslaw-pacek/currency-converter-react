@@ -31,9 +31,7 @@ function App() {
   return (
     <Form onSubmit={count}>
       <Header title="Kalkulator walut" />
-      <Clock
-        text="Dzisiaj jest "
-      />
+      <Clock />
       <Currency
         title="Waluta do przeliczenia"
         currencies={currencies}
