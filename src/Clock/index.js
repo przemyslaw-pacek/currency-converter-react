@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
+const formatClock = (clock) => clock.toLocaleString(undefined, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+});
+
 const Clock = () => {
     const [clock, setClock] = useState(new Date());
-
-    const formatClock = () =>
-        new Date().toLocaleString(undefined, {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric"
-        });
 
     useEffect(() => {
         const intervalClock = setInterval(() => {
@@ -26,7 +25,9 @@ const Clock = () => {
 
     return (
         <p className="clock">
-            Dzisiaj jest {formatClock(clock)}
+            Dzisiaj jest
+            {" "}
+            {formatClock(clock)}
         </p>
     );
 };
