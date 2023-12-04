@@ -1,11 +1,10 @@
-import "./style.css";
+import { SelectCurrency, Title } from "./styled.js";
 
 const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) => (
   <p>
     <label>
-      <span className="title">{title}</span>
-      <select
-        className="currency"
+      <Title>{title}</Title>
+      <SelectCurrency
         onClick={exchangeRate}
         value={currency}
         onChange={({ target }) => setCurrency(target.value)}
@@ -15,7 +14,7 @@ const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) =>
             {currency.name}
           </option>
         ))}
-      </select>
+      </SelectCurrency>
     </label>
   </p>
 );

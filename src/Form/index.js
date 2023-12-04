@@ -1,4 +1,4 @@
-import './style.css';
+import { Field } from "./styled.js";
 
 const Form = ({ children, onSubmit }) => {
 
@@ -10,9 +10,7 @@ const Form = ({ children, onSubmit }) => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <fieldset className="form">
-                {children}
-            </fieldset>
+            <Field>{children}</Field>
         </form>
     );
 };

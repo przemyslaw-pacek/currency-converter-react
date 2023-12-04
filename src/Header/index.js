@@ -1,9 +1,7 @@
-import "./style.css";
+import { Legend } from "./styled.js";
 
 const Header = ({ title }) => (
-    <legend className="header">
-        {title}
-    </legend>
+    <Legend>{title}</Legend>
 );
 
 export default Header;

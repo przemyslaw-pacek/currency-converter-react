@@ -1,11 +1,12 @@
-import "./style.css";
+import { Title } from "../Currency/styled.js";
+import { TargetAmount } from "./styled.js";
 
 const Result = ({ title, result }) => (
     <p>
-        <span className="title">{title}</span>
-        <strong className="result">
+        <Title>{title}</Title>
+        <TargetAmount>
             {result ? `${result.resultAmount.toFixed(2)} ${result.symbolCurrency}` : null}
-        </strong>
+        </TargetAmount>
     </p>
 )
 

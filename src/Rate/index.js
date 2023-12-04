@@ -1,14 +1,13 @@
-import "./style.css";
+import { Title } from "../Currency/styled.js";
+import { Button } from "./styled.js";
 
 const Rate = ({ title, rate }) => (
     <p>
-        <span className="title">
+        <Title>
             {title}
             <strong>{rate.toFixed(2)}</strong>
-        </span>
-        <button className="button">
-            Przelicz
-        </button>
+        </Title>
+        <Button>Przelicz</Button>
     </p>
 );
 

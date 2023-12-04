@@ -1,11 +1,11 @@
-import "./style.css";
+import { Title } from "../Currency/styled.js";
+import { Input } from "./styled.js";
 
 const Amount = ({ title, amount, setAmount }) => (
     <p>
         <label>
-            <span className="title">{title}</span>
-            <input
-                className="amount"
+            <Title>{title}</Title>
+            <Input
                 required type="number"
                 step="0.01"
                 min="0.01"
