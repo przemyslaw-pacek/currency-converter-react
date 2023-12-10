@@ -1,4 +1,4 @@
-import { Title } from "../Currency/styled.js";
+import { Title } from "../GlobalStyle.js"
 import { Button } from "./styled.js";
 
 const Rate = ({ title, rate }) => (

@@ -1,4 +1,5 @@
-import { SelectCurrency, Title } from "./styled.js";
+import { Title } from "../GlobalStyle.js"
+import { SelectCurrency } from "./styled.js";
 
 const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) => (
   <p>

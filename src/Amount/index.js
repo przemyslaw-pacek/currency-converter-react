@@ -1,4 +1,4 @@
-import { Title } from "../Currency/styled.js";
+import { Title } from "../GlobalStyle.js"
 import { Input } from "./styled.js";
 
 const Amount = ({ title, amount, setAmount }) => (
