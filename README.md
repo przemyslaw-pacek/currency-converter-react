@@ -10,10 +10,14 @@ If you want to check, clik [here](https://doncochino.github.io/currency-converte
 ## Technologies:
 - HTML
 - CSS
-- BEM
 - JavaScript
+- BEM
+- Normalize
 - Immutability
 - React
+- Webpack
+- Styled-components
+- Custom hooks
 
 How to use:
 
