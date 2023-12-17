@@ -5,4 +5,5 @@ export const SelectCurrency = styled.select`
     width: 100%;
     max-width: 200px;
     text-align: right;
+    cursor: pointer;
 `;
