@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
-export const TargetAmount = styled.strong`
+export const Button = styled.button`
     width: 100%;
-    max-width: 174.5px;
-    display: inline-block;
-    text-align: right;
+    max-width: 200px;
+    margin: 10px 0;
+    cursor: pointer;
+`;
+
+export const TargetAmount = styled.strong`
+    color: yellow;
+    display: grid;
+    justify-content: center;
 `;

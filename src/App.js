@@ -4,9 +4,9 @@ import Header from "./Header";
 import Clock from "./Clock";
 import Currency from "./Currency";
 import Amount from "./Amount";
-import Rate from "./Rate";
 import Result from "./Result";
 import currencies from "./currencies";
+import Footer from "./Footer";
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -20,11 +20,14 @@ function App() {
   };
 
   const count = () => {
-    const symbolCurrency = currencies.find(({ rate }) => rate === +outCurrency).symbol;
+    const inputCurrency = currencies.find(({ rate }) => rate === +inCurrency).name;
+    const outputCurrency = currencies.find(({ rate }) => rate === +outCurrency).name;
 
     setResult({
-      resultAmount: amount * rate,
-      symbolCurrency
+      inputAmount: +amount,
+      inputCurrency,
+      outputAmount: amount * rate,
+      outputCurrency
     });
   };
 
@@ -51,14 +54,12 @@ function App() {
         setCurrency={setOutCurrency}
         exchangeRate={exchangeRate}
       />
-      <Rate
+      <Result
         title="Kurs wymiany: "
         rate={rate}
-      />
-      <Result
-        title="Kwota po przeliczeniu:"
         result={result}
       />
+      <Footer />
     </Form>
   );
 };
