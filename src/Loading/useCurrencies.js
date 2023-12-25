@@ -32,5 +32,5 @@ export const useCurrencies = () => {
         }, 1000);
     });
 
-    return { data }
+    return data;
 }
