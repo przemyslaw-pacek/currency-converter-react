@@ -1,16 +1,18 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+const URL = "currency-converter-react/currencies.json";
+//https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh
+
 export const useCurrencies = () => {
     const { data, setData } = useState({
         status: "loading",
-        data: null
     });
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get("currencies.json");
+                const response = await axios.get(URL);
 
                 setData({
                     status: "content",
