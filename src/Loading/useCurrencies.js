@@ -28,5 +28,5 @@ export const useCurrencies = () => {
         getData();
     });
 
-    return [data]
+    return { data }
 }
