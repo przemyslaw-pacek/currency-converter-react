@@ -12,11 +12,11 @@ const Result = ({ data, title, rate, result }) => (
                 <Button>Przelicz</Button>
                 <TargetAmount>
                     {result ? `
-            ${result.inputAmount.toFixed(2)}
-            ${result.inputCurrency} 
-            =
-            ${result.outputAmount.toFixed(2)} 
-            ${result.outputCurrency}` : null}
+                        ${result.inputAmount.toFixed(2)}
+                        ${result.inputCurrency} 
+                        =
+                        ${result.outputAmount.toFixed(2)} 
+                        ${result.outputCurrency}` : null}
                 </TargetAmount>
             </p>
         )}
