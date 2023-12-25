@@ -3,7 +3,7 @@ import { Info } from "./styled.js";
 const Footer = ({ data }) => {
     const isoDate = Object.values(data.meta);
     const date = new Date(isoDate[0]);
-    const formatDate = date.toLocaleString();
+    const formatDate = date.toLocaleDateString();
 
     return (
         <>
