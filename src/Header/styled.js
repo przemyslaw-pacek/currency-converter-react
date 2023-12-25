@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Legend = styled.legend`
-    background: rgb(182, 172, 122);
+    background: ${({ theme }) => theme.color.mongoose};
     border: 1px solid;
     border-radius: 8px;
     padding: 5px;

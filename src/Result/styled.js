@@ -8,7 +8,8 @@ export const Button = styled.button`
 `;
 
 export const TargetAmount = styled.strong`
-    color: yellow;
+    color: ${({ theme }) => theme.color.yellow};
+    margin: 8px;
     display: grid;
     justify-content: center;
 `;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Field = styled.fieldset`
-    color: white;
-    background: rgba(60, 60, 60, 0.505);
+    color: ${({ theme }) => theme.color.white};
+    background: ${({ theme }) => theme.color.blackTransparent};
     border: 1px solid;
     border-radius: 8px;
     max-width: 415px;
