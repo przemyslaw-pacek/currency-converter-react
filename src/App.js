@@ -1,27 +1,31 @@
 import { useState } from "react";
+import { useCurrencies } from "./Loading/useCurrencies.js";
 import Form from "./Form";
 import Header from "./Header";
 import Clock from "./Clock";
+import Loading from "./Loading";
 import Currency from "./Currency";
 import Amount from "./Amount";
 import Result from "./Result";
-import currencies from "./currencies";
 import Footer from "./Footer";
 
 function App() {
+  const { data } = useCurrencies;
+  const currencies = Object.values(data.data);
+
   const [amount, setAmount] = useState("");
-  const [inCurrency, setInCurrency] = useState(currencies[1].rate);
-  const [outCurrency, setOutCurrency] = useState(currencies[0].rate);
-  const [rate, setRate] = useState(currencies[1].rate);
+  const [inCurrency, setInCurrency] = useState(currencies[54].value);
+  const [outCurrency, setOutCurrency] = useState(currencies[128].value);
+  const [rate, setRate] = useState(outCurrency / inCurrency);
   const [result, setResult] = useState("");
 
   const exchangeRate = () => {
-    setRate(inCurrency / outCurrency);
+    setRate(outCurrency / inCurrency);
   };
 
   const count = () => {
-    const inputCurrency = currencies.find(({ rate }) => rate === +inCurrency).name;
-    const outputCurrency = currencies.find(({ rate }) => rate === +outCurrency).name;
+    const inputCurrency = currencies.find(({ value }) => value === +inCurrency).code;
+    const outputCurrency = currencies.find(({ value }) => value === +outCurrency).code;
 
     setResult({
       inputAmount: +amount,
@@ -35,7 +39,9 @@ function App() {
     <Form onSubmit={count}>
       <Header title="Kalkulator walut" />
       <Clock />
+      <Loading />
       <Currency
+        data={data}
         title="Waluta do przeliczenia"
         currencies={currencies}
         currency={inCurrency}
@@ -43,6 +49,7 @@ function App() {
         exchangeRate={exchangeRate}
       />
       <Amount
+        data={data}
         title="Wprowadź kwotę"
         amount={amount}
         setAmount={setAmount}
@@ -55,11 +62,14 @@ function App() {
         exchangeRate={exchangeRate}
       />
       <Result
+        data={data}
         title="Kurs wymiany: "
         rate={rate}
         result={result}
       />
-      <Footer />
+      <Footer
+        data={data}
+      />
     </Form>
   );
 };

@@ -1,23 +1,27 @@
-import { Title } from "../GlobalStyle.js"
+import { Title } from "../GlobalStyle.js";
 import { SelectCurrency } from "./styled.js";
 
-const Currency = ({ title, currencies, currency, setCurrency, exchangeRate }) => (
-  <p>
-    <label>
-      <Title>{title}</Title>
-      <SelectCurrency
-        onClick={exchangeRate}
-        value={currency}
-        onChange={({ target }) => setCurrency(target.value)}
-      >
-        {currencies.map(currency => (
-          <option key={currency.rate} value={currency.rate}>
-            {currency.name}
-          </option>
-        ))}
-      </SelectCurrency>
-    </label>
-  </p>
+const Currency = ({ data, title, currencies, currency, setCurrency, exchangeRate }) => (
+  <>
+    {data.status === "content" && (
+      <p>
+        <label>
+          <Title>{title}</Title>
+          <SelectCurrency
+            onClick={exchangeRate}
+            value={currency}
+            onChange={({ target }) => setCurrency(target.value)}
+          >
+            {currencies.map(currency => (
+              <option key={currency.value} value={currency.value}>
+                {currency.code}
+              </option>
+            ))}
+          </SelectCurrency>
+        </label>
+      </p>
+    )}
+  </>
 );
 
 export default Currency;
