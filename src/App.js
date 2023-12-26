@@ -10,8 +10,8 @@ import Result from "./Result";
 import Footer from "./Footer";
 
 function App() {
-  const { data } = useCurrencies;
-  const currencies = Object.values(data.data);
+  const data = useCurrencies();
+  const currencies = Object.values(data.data.data);
 
   const [amount, setAmount] = useState("");
   const [inCurrency, setInCurrency] = useState(currencies[54].value);
