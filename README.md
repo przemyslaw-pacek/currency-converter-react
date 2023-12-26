@@ -3,7 +3,8 @@
 ![image](https://github.com/doncochino/currency-converter-react/blob/main/animation.gif)
 
 ## Description
-This is the currency converter that allows you to amount currencies between 4 types: PLN, EUR, GBP and USD.
+This is the currency converter that allows you to amount all currencies in the world.
+Exchange rates come from app.currencyapi.com.
 
 If you want to check, clik [here](https://doncochino.github.io/currency-converter-react/).
 
@@ -18,6 +19,7 @@ If you want to check, clik [here](https://doncochino.github.io/currency-converte
 - Webpack
 - Styled-components
 - Custom hooks
+- Axios
 
 How to use:
 
