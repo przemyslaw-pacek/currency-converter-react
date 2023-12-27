@@ -11,27 +11,28 @@ import Footer from "./Footer";
 
 function App() {
   const data = useCurrencies();
-  const currencies = Object.values(data.data.data);
+  const currencies = data.data.data;
+  console.log(currencies);
 
   const [amount, setAmount] = useState("");
-  const [inCurrency, setInCurrency] = useState(currencies[54].value);
-  const [outCurrency, setOutCurrency] = useState(currencies[128].value);
-  const [rate, setRate] = useState(outCurrency / inCurrency);
+  const [inCurrency, setInCurrency] = useState("EUR");
+  const [outCurrency, setOutCurrency] = useState("PLN");
+  const [rate, setRate] = useState(currencies.PLN.value / currencies.EUR.value);
   const [result, setResult] = useState("");
 
   const exchangeRate = () => {
-    setRate(outCurrency / inCurrency);
+    const inputCurrency = currencies[inCurrency].value;
+    const outputCurrency = currencies[outCurrency].value;
+
+    setRate(outputCurrency / inputCurrency);
   };
 
   const count = () => {
-    const inputCurrency = currencies.find(({ value }) => value === +inCurrency).code;
-    const outputCurrency = currencies.find(({ value }) => value === +outCurrency).code;
-
     setResult({
       inputAmount: +amount,
-      inputCurrency,
+      inCurrency,
       outputAmount: amount * rate,
-      outputCurrency
+      outCurrency
     });
   };
 
@@ -41,29 +42,30 @@ function App() {
       <Clock />
       <Loading />
       <Currency
-        data={data}
         title="Waluta do przeliczenia"
+        data={data}
         currencies={currencies}
         currency={inCurrency}
         setCurrency={setInCurrency}
         exchangeRate={exchangeRate}
       />
       <Amount
-        data={data}
         title="Wprowadź kwotę"
+        data={data}
         amount={amount}
         setAmount={setAmount}
       />
       <Currency
         title="Przelicz na walutę"
+        data={data}
         currencies={currencies}
         currency={outCurrency}
         setCurrency={setOutCurrency}
         exchangeRate={exchangeRate}
       />
       <Result
-        data={data}
         title="Kurs wymiany: "
+        data={data}
         rate={rate}
         result={result}
       />
