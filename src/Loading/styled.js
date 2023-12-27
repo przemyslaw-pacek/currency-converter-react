@@ -1,14 +1,15 @@
 import styled, { css } from "styled-components";
 
 export const Alert = styled.p`
-    font-size: large;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
 
     ${({ loading }) => loading && css`    
         color: ${({ theme }) => theme.color.yellow};
     `}
 
     ${({ error }) => error && css`    
-        color: ${({ theme }) => theme.color.red};
+        color: ${({ theme }) => theme.color.tainoi};
     `}
 `;
