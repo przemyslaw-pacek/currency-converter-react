@@ -1,15 +1,14 @@
-import { Info } from "./styled.js";
+import { Info, Format } from "./styled.js";
 
 const Footer = ({ data }) => {
-    const isoDate = Object.values(data.data.meta);
-    const date = new Date(isoDate[0]);
+    const date = new Date(data.data.meta.last_updated_at);
     const formatDate = date.toLocaleDateString();
 
     return (
         <>
             {data.status === "content" && (
                 <Info> Kursy walut pobierane są z Europejskiego Banku Centralnego.
-                    Aktualne na dzień: <strong>{formatDate}</strong>
+                    Aktualne na dzień: <Format>{formatDate}</Format>
                 </Info>
             )}
         </>
