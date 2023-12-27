@@ -2,24 +2,24 @@ import { useCurrencies } from "./useCurrencies.js";
 import { Alert } from "./styled.js";
 
 const Loading = () => {
-    const { data } = useCurrencies();
+    const data = useCurrencies();
 
     return (
-        <>
+        <p>
             {data.status === "loading" && (
                 <Alert loading>
-                    Ładowanie...
-                    Pobieranie danych z Europejskiego Banku Centralnego.
+                    <p>Ładowanie...</p>
+                    <p>Pobieranie danych z serwera</p>
                 </Alert>
             )}
             {data.status === "error" && (
                 <Alert error>
-                    Coś poszło nie tak.
-                    Brak połączenia z internetem.
-                    Spróbuj ponownie!
+                    <p>Coś poszło nie tak.</p>
+                    <p>Brak połączenia z serwerem.</p>
+                    <p>Spróbuj ponownie!</p>
                 </Alert>
             )}
-        </>
+        </p>
     );
 };
 
