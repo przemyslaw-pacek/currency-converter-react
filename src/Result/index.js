@@ -13,10 +13,10 @@ const Result = ({ data, title, rate, result }) => (
                 <TargetAmount>
                     {result ? `
                         ${result.inputAmount.toFixed(2)}
-                        ${result.inputCurrency} 
+                        ${result.inCurrency} 
                         =
                         ${result.outputAmount.toFixed(2)} 
-                        ${result.outputCurrency}` : null}
+                        ${result.outCurrency}` : null}
                 </TargetAmount>
             </p>
         )}
