@@ -18,7 +18,7 @@ function App() {
   const [outCurrency, setOutCurrency] = useState("PLN");
   const [rate, setRate] = useState(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
   const [result, setResult] = useState("");
-  console.log(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
+  //console.log(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
 
   const exchangeRate = () => {
     const inputCurrency = currencies[inCurrency].value;
