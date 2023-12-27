@@ -11,14 +11,14 @@ import Footer from "./Footer";
 
 function App() {
   const data = useCurrencies();
-  const currencies = data.data.data;
-  console.log(currencies);
+  const currencies = data?.data?.data;
 
   const [amount, setAmount] = useState("");
   const [inCurrency, setInCurrency] = useState("EUR");
   const [outCurrency, setOutCurrency] = useState("PLN");
-  const [rate, setRate] = useState(currencies.PLN.value / currencies.EUR.value);
+  const [rate, setRate] = useState(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
   const [result, setResult] = useState("");
+  console.log(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
 
   const exchangeRate = () => {
     const inputCurrency = currencies[inCurrency].value;

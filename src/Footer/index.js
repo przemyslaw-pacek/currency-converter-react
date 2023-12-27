@@ -1,7 +1,7 @@
 import { Info, Format } from "./styled.js";
 
 const Footer = ({ data }) => {
-    const date = new Date(data.data.meta.last_updated_at);
+    const date = new Date(data?.data?.meta.last_updated_at);
     const formatDate = date.toLocaleDateString();
 
     return (
