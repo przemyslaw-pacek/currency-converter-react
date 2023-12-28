@@ -1,7 +1,7 @@
 import { Title } from "../GlobalStyle.js"
 import { Input } from "./styled.js";
 
-const Amount = ({ data, title, amount, setAmount }) => (
+const Amount = ({ data, title, amount, setAmount, exchangeRate }) => (
 
     <>
         {data.status === "content" && (
@@ -14,6 +14,7 @@ const Amount = ({ data, title, amount, setAmount }) => (
                         min="0.01"
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
+                        onClick={exchangeRate}
                     />
                 </label>
             </p>
