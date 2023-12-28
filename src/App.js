@@ -16,9 +16,8 @@ function App() {
   const [amount, setAmount] = useState("");
   const [inCurrency, setInCurrency] = useState("EUR");
   const [outCurrency, setOutCurrency] = useState("PLN");
-  const [rate, setRate] = useState(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
+  const [rate, setRate] = useState(4.30);
   const [result, setResult] = useState("");
-  //console.log(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
 
   const exchangeRate = () => {
     const inputCurrency = currencies[inCurrency].value;
@@ -32,7 +31,7 @@ function App() {
       inputAmount: +amount,
       inCurrency,
       outputAmount: amount * rate,
-      outCurrency
+      outCurrency,
     });
   };
 
@@ -54,6 +53,7 @@ function App() {
         data={data}
         amount={amount}
         setAmount={setAmount}
+        exchangeRate={exchangeRate}
       />
       <Currency
         title="Przelicz na walutę"
