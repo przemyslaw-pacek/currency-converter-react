@@ -8,9 +8,9 @@ const Currency = ({ data, title, currencies, currency, setCurrency, exchangeRate
         <label>
           <Title>{title}</Title>
           <SelectCurrency
-            onClick={exchangeRate}
             value={currency}
             onChange={({ target }) => setCurrency(target.value)}
+            onClick={exchangeRate}
           >
             {Object.keys(currencies).map(currency => (
               <option key={currency} value={currency}>
