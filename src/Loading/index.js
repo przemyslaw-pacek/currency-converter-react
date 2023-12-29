@@ -9,7 +9,7 @@ const Loading = () => {
             {data.status === "loading" && (
                 <Alert loading>
                     <p>Ładowanie...</p>
-                    <p>Pobieranie danych z serwera</p>
+                    <p>Pobieranie danych z serwera.</p>
                 </Alert>
             )}
             {data.status === "error" && (
