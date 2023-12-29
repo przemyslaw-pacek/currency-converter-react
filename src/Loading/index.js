@@ -5,7 +5,7 @@ const Loading = () => {
     const data = useCurrencies();
 
     return (
-        <p>
+        <>
             {data.status === "loading" && (
                 <Alert loading>
                     <p>Ładowanie...</p>
@@ -19,7 +19,7 @@ const Loading = () => {
                     <p>Spróbuj ponownie!</p>
                 </Alert>
             )}
-        </p>
+        </>
     );
 };
 
