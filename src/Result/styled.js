@@ -4,6 +4,7 @@ export const Button = styled.button`
     width: 100%;
     max-width: 200px;
     margin: 10px 0;
+    font-weight: bold;
     cursor: pointer;
 `;
 
