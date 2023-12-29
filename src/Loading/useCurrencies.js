@@ -17,7 +17,6 @@ export const useCurrencies = () => {
                     status: "content",
                     data: response.data,
                 });
-                console.log(data.data);
             } catch {
                 setData({
                     status: "error",
