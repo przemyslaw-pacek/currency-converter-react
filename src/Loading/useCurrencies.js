@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const URL = "currencies.json";
-//https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh
+const URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh";
 
 export const useCurrencies = () => {
     const [data, setData] = useState({
