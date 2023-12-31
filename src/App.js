@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCurrencies } from "./Loading/useCurrencies.js";
 import Form from "./Form";
 import Header from "./Header";
@@ -16,8 +16,12 @@ function App() {
   const [amount, setAmount] = useState("");
   const [inCurrency, setInCurrency] = useState("EUR");
   const [outCurrency, setOutCurrency] = useState("PLN");
-  const [rate, setRate] = useState(4.30);
+  const [rate, setRate] = useState("");
   const [result, setResult] = useState("");
+
+  useEffect(() => {
+    setRate(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
+  }, [currencies, inCurrency, outCurrency]);
 
   const exchangeRate = () => {
     const inputCurrency = currencies[inCurrency].value;
@@ -53,7 +57,6 @@ function App() {
         data={data}
         amount={amount}
         setAmount={setAmount}
-        exchangeRate={exchangeRate}
       />
       <Currency
         title="Przelicz na walutę"
