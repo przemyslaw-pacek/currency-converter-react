@@ -1,10 +1,6 @@
-import { useCurrencies } from "./useCurrencies.js";
 import { Alert } from "./styled.js";
 
-const Loading = () => {
-    const data = useCurrencies();
-
-    return (
+const Loading = ({ data }) => (
         <>
             {data.status === "loading" && (
                 <Alert loading>
@@ -20,7 +16,6 @@ const Loading = () => {
                 </Alert>
             )}
         </>
-    );
-};
+);
 
 export default Loading;
