@@ -1,10 +1,8 @@
 import { Field } from "./styled.js";
 
-const Form = ({ children, onSubmit }) => {
+const Form = ({ children }) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
-
-        onSubmit();
     };
 
     return (

@@ -39,7 +39,7 @@ function App() {
   };
 
   return (
-    <Form onSubmit={count}>
+    <Form>
       <Header title="Kalkulator walut" />
       <Clock />
       <Loading
@@ -71,6 +71,7 @@ function App() {
         title="Kurs wymiany: "
         data={data}
         rate={rate}
+        count={count}
         result={result}
       />
       <Footer
