@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useCurrencies } from "./Loading/useCurrencies.js";
+import { useCurrencies } from "./Currency/useCurrencies.js";
 import Form from "./Form";
 import Header from "./Header";
 import Clock from "./Clock";
@@ -19,14 +19,14 @@ function App() {
   const [rate, setRate] = useState("");
   const [result, setResult] = useState("");
 
+  const inputCurrency = currencies?.[inCurrency].value;
+  const outputCurrency = currencies?.[outCurrency].value;
+
   useEffect(() => {
-    setRate(currencies?.[outCurrency].value / currencies?.[inCurrency].value);
-  }, [currencies, inCurrency, outCurrency]);
+    setRate(outputCurrency / inputCurrency);
+  }, [outputCurrency, inputCurrency]);
 
   const exchangeRate = () => {
-    const inputCurrency = currencies[inCurrency].value;
-    const outputCurrency = currencies[outCurrency].value;
-
     setRate(outputCurrency / inputCurrency);
   };
 
@@ -43,7 +43,9 @@ function App() {
     <Form onSubmit={count}>
       <Header title="Kalkulator walut" />
       <Clock />
-      <Loading />
+      <Loading
+        data={data}
+      />
       <Currency
         title="Waluta do przeliczenia"
         data={data}
