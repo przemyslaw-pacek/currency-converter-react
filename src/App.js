@@ -19,15 +19,14 @@ function App() {
   const [rate, setRate] = useState("");
   const [result, setResult] = useState("");
 
-  const inputCurrency = currencies?.[inCurrency].value;
-  const outputCurrency = currencies?.[outCurrency].value;
+  const division = currencies?.[outCurrency].value / currencies?.[inCurrency].value;
 
   useEffect(() => {
-    setRate(outputCurrency / inputCurrency);
-  }, [outputCurrency, inputCurrency]);
+    setRate(division);
+  }, [division]);
 
   const exchangeRate = () => {
-    setRate(outputCurrency / inputCurrency);
+    setRate(division);
   };
 
   const count = () => {
