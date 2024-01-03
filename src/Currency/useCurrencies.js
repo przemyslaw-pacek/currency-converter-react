@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh";
+const URL = "currencies.json"
+//"https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh";
 
 export const useCurrencies = () => {
     const [data, setData] = useState({
-        status: "loading"
+        status: "loading",
     });
 
         const getData = async () => {
@@ -26,6 +27,8 @@ export const useCurrencies = () => {
         useEffect(() => {
             setTimeout(getData, 1000);
     }, []);
+    
+    console.log(data.data);
 
     return data;
 }
