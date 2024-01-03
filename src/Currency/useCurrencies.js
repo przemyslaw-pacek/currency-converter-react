@@ -13,6 +13,7 @@ export const useCurrencies = () => {
             try {
                 const response = await axios.get(URL);
 
+                console.log(data.data);
                 setData({
                     status: "content",
                     data: response.data,
@@ -27,8 +28,6 @@ export const useCurrencies = () => {
         useEffect(() => {
             setTimeout(getData, 1000);
     }, []);
-    
-    console.log(data.data);
 
     return data;
 }
