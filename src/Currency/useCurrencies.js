@@ -11,7 +11,7 @@ export const useCurrencies = () => {
     };
 
     useEffect(() => {
-        setTimeout(getData, 1000);
+        setTimeout(getData, 2000);
     }, []);
     
     return data;
