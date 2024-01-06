@@ -7,12 +7,23 @@ export const useCurrencies = () => {
     });
 
     const getData = async () => {
-        setData(await getApi());
+        try {
+            const data = await getApi();
+
+            setData({
+                status: "content",
+                data,
+            });
+        } catch {
+            setData({
+                status: "error",
+            });
+        }
     };
 
     useEffect(() => {
         setTimeout(getData, 2000);
     }, []);
-    
+
     return data;
 };

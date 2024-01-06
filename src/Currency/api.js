@@ -1,18 +1,11 @@
 import axios from "axios";
 
-const URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh";
+const URL = "currencies.json"
+//"https://api.currencyapi.com/v3/latest?apikey=cur_live_6fdXdtntZGuUZUAm7tbYEWr6J2JjNvedZhbzYMIh";
 
 export const getApi = async () => {
-    try {
-        const response = await axios.get(URL);
+    const response = await axios.get(URL);
+    const data = response.data;
 
-        return {
-            status: "content",
-            data: response.data,
-        };
-    } catch {
-        return {
-            status: "error",
-        };
-    }
+    return data;
 };
