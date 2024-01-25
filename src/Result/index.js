@@ -1,7 +1,7 @@
 import { Title } from "../GlobalStyle.js"
 import { Button, TargetAmount } from "./styled.js";
 
-const Result = ({ data, title, rate, count, result }) => (
+const Result = ({ data, title, rate, result }) => (
     <>
         {data.status === "content" && (
             <p>
@@ -9,7 +9,7 @@ const Result = ({ data, title, rate, count, result }) => (
                     {title}
                     <strong>{rate.toFixed(2)}</strong>
                 </Title>
-                <Button onClick={count}>Przelicz</Button>
+                <Button>Przelicz</Button>
                 <TargetAmount>
                     {result ? `
                         ${result.inputAmount.toFixed(2)}
