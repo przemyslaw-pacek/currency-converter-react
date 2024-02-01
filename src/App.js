@@ -25,10 +25,6 @@ function App() {
     setRate(division);
   }, [division]);
 
-  const exchangeRate = () => {
-    setRate(division);
-  };
-
   const count = () => {
     setResult({
       inputAmount: +amount,
@@ -51,7 +47,6 @@ function App() {
         currencies={currencies}
         currency={inCurrency}
         setCurrency={setInCurrency}
-        exchangeRate={exchangeRate}
       />
       <Amount
         title="Wprowadź kwotę"
@@ -65,7 +60,6 @@ function App() {
         currencies={currencies}
         currency={outCurrency}
         setCurrency={setOutCurrency}
-        exchangeRate={exchangeRate}
       />
       <Result
         title="Kurs wymiany: "

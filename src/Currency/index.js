@@ -1,7 +1,7 @@
 import { Title } from "../GlobalStyle.js";
 import { SelectCurrency } from "./styled.js";
 
-const Currency = ({ data, title, currencies, currency, setCurrency, exchangeRate }) => (
+const Currency = ({ data, title, currencies, currency, setCurrency }) => (
   <>
     {data.status === "content" && (
       <p>
@@ -10,7 +10,6 @@ const Currency = ({ data, title, currencies, currency, setCurrency, exchangeRate
           <SelectCurrency
             value={currency}
             onChange={({ target }) => setCurrency(target.value)}
-            onClick={exchangeRate}
           >
             {Object.keys(currencies).map(currency => (
               <option key={currency} value={currency}>
