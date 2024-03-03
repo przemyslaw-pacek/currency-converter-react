@@ -7,15 +7,21 @@ const Result = ({ data, title, rate, result }) => (
             <p>
                 <Title>
                     {title}
-                    <strong>{rate.toFixed(2)}</strong>
+                    <strong>{rate.toLocaleString("pl-PL", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                    })}</strong>
                 </Title>
                 <Button>Przelicz</Button>
                 <TargetAmount>
                     {result ? `
-                        ${result.inputAmount.toFixed(2)}
+                        ${result.inputAmount.toLocaleString()}
                         ${result.inCurrency} 
                         =
-                        ${result.outputAmount.toFixed(2)} 
+                        ${result.outputAmount.toLocaleString("pl-PL", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                    })} 
                         ${result.outCurrency}` : null}
                 </TargetAmount>
             </p>
