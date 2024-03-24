@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Alert = styled.p`
     text-align: center;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bold;
 
     ${({ loading }) => loading && css`    

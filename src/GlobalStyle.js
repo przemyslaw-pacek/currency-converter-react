@@ -21,7 +21,8 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Title = styled.span`
     width: 100%;
-    max-width: 200px;
+    max-width: 240px;
     display: inline-block;
     margin-right: 9px;
+    font-size: 20px;
 `;

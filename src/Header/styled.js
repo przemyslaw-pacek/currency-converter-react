@@ -5,5 +5,5 @@ export const Legend = styled.legend`
     border: 1px solid;
     border-radius: 8px;
     padding: 5px;
-    font-size: 18px;
+    font-size: 22px;
 `;

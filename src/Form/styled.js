@@ -5,7 +5,8 @@ export const Field = styled.fieldset`
     background: ${({ theme }) => theme.color.blackTransparent};
     border: 1px solid;
     border-radius: 8px;
-    max-width: 415px;
+    max-width: 500px;
     padding: 0 20px;
-    margin: 50px auto;
+    margin: 100px auto;
+    font-size: 20px;
 `;
