@@ -7,7 +7,7 @@ This is the currency converter that allows you to amount all currencies in the w
 Exchange rates come from app.currencyapi.com.
 
 ## Demo
-If you want to check, clik [here](https://doncochino.github.io/currency-converter-react/).
+If you want to check, clik [here](https://przemyslaw-pacek.github.io/currency-converter-react/).
 
 ## Technologies:
 - HTML
