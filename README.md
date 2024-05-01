@@ -1,6 +1,6 @@
 # Currency Converter
 
-![image](https://github.com/doncochino/currency-converter-react/blob/main/animation.gif)
+![image](./animation.gif)
 
 ## Description
 This is the currency converter that allows you to amount all currencies in the world.
