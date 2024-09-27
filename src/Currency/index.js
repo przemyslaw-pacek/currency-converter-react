@@ -11,7 +11,7 @@ const Currency = ({ data, title, currencies, currency, setCurrency }) => (
             value={currency}
             onChange={({ target }) => setCurrency(target.value)}
           >
-            {Object.keys(currencies).map(currency => (
+            {Object.keys(currencies).map((currency) => (
               <option key={currency} value={currency}>
                 {currency}
               </option>

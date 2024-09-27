@@ -19,7 +19,8 @@ function App() {
   const [rate, setRate] = useState("");
   const [result, setResult] = useState("");
 
-  const division = currencies?.[outCurrency].value / currencies?.[inCurrency].value;
+  const division =
+    currencies?.[outCurrency].value / currencies?.[inCurrency].value;
 
   useEffect(() => {
     setRate(division);
@@ -38,9 +39,7 @@ function App() {
     <Form onSubmit={count}>
       <Header title="Kalkulator walut" />
       <Clock />
-      <Loading
-        data={data}
-      />
+      <Loading data={data} />
       <Currency
         title="Waluta do przeliczenia"
         data={data}
@@ -61,17 +60,10 @@ function App() {
         currency={outCurrency}
         setCurrency={setOutCurrency}
       />
-      <Result
-        title="Kurs wymiany: "
-        data={data}
-        rate={rate}
-        result={result}
-      />
-      <Footer
-        data={data}
-      />
+      <Result title="Kurs wymiany: " data={data} rate={rate} result={result} />
+      <Footer data={data} />
     </Form>
   );
-};
+}
 
 export default App;

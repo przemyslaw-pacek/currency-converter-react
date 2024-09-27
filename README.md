@@ -3,13 +3,16 @@
 ![image](./animation.gif)
 
 ## Description
+
 This is the currency converter that allows you to amount all currencies in the world.
 Exchange rates come from app.currencyapi.com.
 
 ## Demo
+
 If you want to check, clik [here](https://przemyslaw-pacek.github.io/currency-converter-react/).
 
 ## Technologies:
+
 - HTML
 - CSS
 - JavaScript
