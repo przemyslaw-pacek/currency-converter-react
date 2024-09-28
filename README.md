@@ -16,12 +16,9 @@ If you want to check, clik [here](https://przemyslaw-pacek.github.io/currency-co
 - HTML
 - CSS
 - JavaScript
-- BEM
 - Normalize
-- Immutability
 - React
-- Webpack
-- Styled-components
+- Styled components
 - Custom hooks
 - Axios
 
