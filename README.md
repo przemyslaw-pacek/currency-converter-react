@@ -18,8 +18,8 @@ If you want to check, clik [here](https://przemyslaw-pacek.github.io/currency-co
 - JavaScript
 - Normalize
 - React
-- Styled components
-- Custom hooks
+- Styled Components
+- Custom Hooks
 - Axios
 
 How to use:
