@@ -22,7 +22,8 @@ export const useCurrencies = () => {
   };
 
   useEffect(() => {
-    setTimeout(getData, 2000);
+    const timeoutId = setTimeout(getData, 2000);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return data;
