@@ -6,4 +6,4 @@ export const theme = {
     blackTransparent: "rgba(60, 60, 60, 0.65)",
     mongoose: "#b6ac7a",
   },
-};
+} as const;

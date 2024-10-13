@@ -1,8 +1,16 @@
-import { Title } from "../GlobalStyle.js";
-import { Button, TargetAmount } from "./styled.js";
+import { Title } from "../GlobalStyle";
+import { Data, ResultDetails } from "../types";
+import { Button, TargetAmount } from "./styled";
 
-const Result = ({ data, title, rate, result }) => {
-  const formatNumber = (number) => {
+interface ResultProps {
+  ratesData: Partial<Data>;
+  title: string;
+  rate: number | null;
+  result: ResultDetails | null;
+}
+
+const Result = ({ ratesData, title, rate, result }: ResultProps) => {
+  const formatNumber = (number: number) => {
     return number.toLocaleString("pl-PL", {
       useGrouping: true,
       minimumFractionDigits: 2,
@@ -12,11 +20,11 @@ const Result = ({ data, title, rate, result }) => {
 
   return (
     <>
-      {data.status === "content" && (
+      {ratesData.status === "success" && (
         <p>
           <Title>
             {title}
-            <strong>{formatNumber(rate)}</strong>
+            <strong>{rate !== null && formatNumber(rate)}</strong>
           </Title>
           <Button>Przelicz</Button>
           <TargetAmount>

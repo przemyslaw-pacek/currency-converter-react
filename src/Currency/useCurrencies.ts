@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
 import { getApi } from "./api";
+import { Data } from "../types";
 
-export const useCurrencies = () => {
-  const [data, setData] = useState({
+export const useCurrencies = (): Partial<Data> => {
+  const [ratesData, setRatesData] = useState<Partial<Data>>({
     status: "loading",
   });
 
   const getData = async () => {
     try {
-      const data = await getApi();
+      const { data, meta } = await getApi();
 
-      setData({
-        status: "content",
+      setRatesData({
+        status: "success",
         data,
+        meta,
       });
     } catch {
-      setData({
+      setRatesData({
         status: "error",
       });
     }
@@ -26,5 +28,5 @@ export const useCurrencies = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  return data;
+  return ratesData;
 };

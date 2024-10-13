@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 
-export const Alert = styled.span`
+export const Alert = styled.div<{
+  $loading?: boolean;
+  $error?: boolean;
+}>`
   text-align: center;
   font-size: 28px;
   font-weight: bold;

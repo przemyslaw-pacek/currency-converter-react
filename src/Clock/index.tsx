@@ -1,7 +1,7 @@
-import { useCurrentDate } from "./useCurrentDate.js";
-import { MyClock } from "./styled.js";
+import { useCurrentDate } from "./useCurrentDate";
+import { MyClock } from "./styled";
 
-const formatDate = (date) =>
+const formatDate = (date: Date) =>
   date.toLocaleString(undefined, {
     weekday: "long",
     day: "numeric",
