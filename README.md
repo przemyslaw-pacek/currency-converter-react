@@ -21,6 +21,7 @@ If you want to check, clik [here](https://przemyslaw-pacek.github.io/currency-co
 - Styled Components
 - Custom Hooks
 - Axios
+- Typescript
 
 How to use:
 
