@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useCurrencies } from "./Currency/useCurrencies";
-import Form from "./Form/index";
-import Header from "./Header/index";
-import Clock from "./Clock/index";
-import Loading from "./Loading/index";
-import Currency from "./Currency/index";
-import Amount from "./Amount/index";
-import Result from "./Result/index";
-import Footer from "./Footer/index";
+import Form from "./Form";
+import Header from "./Header";
+import Clock from "./Clock";
+import Loading from "./Loading";
+import Currency from "./Currency";
+import Amount from "./Amount";
+import Result from "./Result";
+import Footer from "./Footer";
 import { ResultDetails } from "./types";
 
 function App() {
