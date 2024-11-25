@@ -1,4 +1,4 @@
-import { Data } from "../types";
+import { Data } from "../../core/types";
 import { Info, Format } from "./styled";
 
 interface FooterProps {

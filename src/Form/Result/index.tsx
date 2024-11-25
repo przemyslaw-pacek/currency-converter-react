@@ -1,5 +1,5 @@
-import { Title } from "../GlobalStyle";
-import { Data, ResultDetails } from "../types";
+import { Title } from "../../core/GlobalStyle";
+import { Data, ResultDetails } from "../../core/types";
 import { Button, TargetAmount } from "./styled";
 
 interface ResultProps {

@@ -1,6 +1,6 @@
-import { Title } from "../GlobalStyle";
+import { Title } from "../../core/GlobalStyle";
 import { SelectCurrency } from "./styled";
-import type { Data } from "../types";
+import type { Data } from "../../core/types";
 
 interface CurrencyProps {
   ratesData: Partial<Data>;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getApi } from "./api";
-import { Data } from "../types";
+import { Data } from "../../core/types";
 
 export const useCurrencies = (): Partial<Data> => {
   const [ratesData, setRatesData] = useState<Partial<Data>>({

@@ -1,6 +1,6 @@
-import { Title } from "../GlobalStyle";
+import { Title } from "../../core/GlobalStyle";
 import { Input } from "./styled";
-import { Data } from "../types";
+import { Data } from "../../core/types";
 
 interface AmountProps {
   ratesData: Partial<Data>;
