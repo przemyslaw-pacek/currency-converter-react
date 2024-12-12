@@ -14,8 +14,9 @@ const Footer = ({ ratesData }: FooterProps) => {
     <>
       {ratesData.status === "success" && (
         <Info>
-          Kursy walut pobierane są z Europejskiego Banku Centralnego. Aktualne
-          na dzień: <Format>{formatDate}</Format>
+          Kursy walut pobierane są z Currency API.
+          <br />
+          Aktualne na dzień: <Format>{formatDate}</Format>
         </Info>
       )}
     </>
