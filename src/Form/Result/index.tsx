@@ -10,13 +10,12 @@ interface ResultProps {
 }
 
 const Result = ({ ratesData, title, rate, result }: ResultProps) => {
-  const formatNumber = (number: number) => {
-    return number.toLocaleString(undefined, {
+  const formatNumber = (number: number) =>
+    number.toLocaleString(undefined, {
       useGrouping: true,
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
-  };
 
   return (
     <>
