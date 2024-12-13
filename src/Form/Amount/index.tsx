@@ -11,21 +11,10 @@ interface AmountProps {
 
 const Amount = ({ ratesData, title, amount, setAmount }: AmountProps) => {
   const handleInputChange = ({
-    target,
+    target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    const value = target.value;
-
-    if (value === "") {
-      setAmount(null);
-      return;
-    }
-
     const parsedValue = parseFloat(value);
-
-    if (!isNaN(parsedValue)) {
-      setAmount(parsedValue);
-      return;
-    }
+    setAmount(value === "" || isNaN(parsedValue) ? null : parsedValue);
   };
 
   return (
