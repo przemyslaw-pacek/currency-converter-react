@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     background-image: url("${background}");
     background-size: cover;
     min-height: 100vh;
+    margin: 10px;
   }
 `;
 

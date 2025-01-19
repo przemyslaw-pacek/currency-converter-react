@@ -10,7 +10,8 @@ export const Button = styled.button`
 
 export const TargetAmount = styled.strong`
   color: ${({ theme }) => theme.color.yellow};
-  margin: 8px;
+  margin-top: 8px;
   display: grid;
   justify-content: center;
+  word-break: break-word;
 `;
