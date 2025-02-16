@@ -17,22 +17,22 @@ const Result = ({ title, rate, result }: ResultProps) => {
     });
 
   return (
-    <p>
+    <div>
       <Title>
         {title}
         <strong>{rate !== null && formatNumber(rate)}</strong>
       </Title>
       <Button>Przelicz</Button>
-      <TargetAmount>
-        {result &&
-          `
-            ${formatNumber(result.inputAmount)}
+      {result && (
+        <TargetAmount>
+          {`${formatNumber(result.inputAmount)}
             ${result.inCurrency} 
             =
             ${formatNumber(result.outputAmount)} 
             ${result.outCurrency}`}
-      </TargetAmount>
-    </p>
+        </TargetAmount>
+      )}
+    </div>
   );
 };
 
