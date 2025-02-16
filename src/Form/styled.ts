@@ -10,3 +10,22 @@ export const Field = styled.fieldset`
   margin: 100px auto;
   font-size: 20px;
 `;
+
+export const Header = styled.legend`
+  background: ${({ theme }) => theme.color.mongoose};
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 22px;
+`;
+
+export const Loading = styled.div`
+  color: ${({ theme }) => theme.color.yellow};
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+`;
+
+export const Error = styled(Loading)`
+  color: ${({ theme }) => theme.color.tainoi};
+`;

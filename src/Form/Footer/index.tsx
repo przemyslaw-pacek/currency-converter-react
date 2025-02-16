@@ -11,15 +11,11 @@ const Footer = ({ ratesData }: FooterProps) => {
     : "";
 
   return (
-    <>
-      {ratesData.status === "success" && (
-        <Info>
-          Kursy walut pobierane są z Currency API.
-          <br />
-          Aktualne na dzień: <Format>{formatDate}</Format>
-        </Info>
-      )}
-    </>
+    <Info>
+      Kursy walut pobierane są z Currency API.
+      <br />
+      Aktualne na dzień: <Format>{formatDate}</Format>
+    </Info>
   );
 };
 

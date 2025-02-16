@@ -1,10 +1,8 @@
 import { FormEvent } from "react";
-import { Field } from "./styled";
+import { Field, Header, Loading, Error } from "./styled";
 import { useState } from "react";
 import { useCurrencies } from "./Currency/useCurrencies";
-import Header from "./Header";
 import Clock from "./Clock";
-import Loading from "./Loading";
 import Currency from "./Currency";
 import Amount from "./Amount";
 import Result from "./Result";
@@ -39,34 +37,42 @@ const Form = () => {
   return (
     <form onSubmit={onFormSubmit}>
       <Field>
-        <Header title="Kalkulator walut" />
+        <Header>Kalkulator walut</Header>
         <Clock />
-        <Loading ratesData={ratesData} />
-        <Currency
-          title="Waluta do przeliczenia"
-          ratesData={ratesData}
-          currency={inCurrency}
-          setCurrency={setInCurrency}
-        />
-        <Amount
-          title="Wprowadź kwotę"
-          ratesData={ratesData}
-          amount={amount}
-          setAmount={setAmount}
-        />
-        <Currency
-          title="Przelicz na walutę"
-          ratesData={ratesData}
-          currency={outCurrency}
-          setCurrency={setOutCurrency}
-        />
-        <Result
-          title="Kurs wymiany: "
-          ratesData={ratesData}
-          rate={rate}
-          result={result}
-        />
-        <Footer ratesData={ratesData} />
+        {ratesData.status === "loading" ? (
+          <Loading>
+            <p>Ładowanie...</p>
+            <p>Pobieranie danych z serwera.</p>
+          </Loading>
+        ) : ratesData.status === "error" ? (
+          <Error>
+            <p>Coś poszło nie tak.</p>
+            <p>Brak połączenia z serwerem.</p>
+            <p>Spróbuj ponownie!</p>
+          </Error>
+        ) : (
+          <>
+            <Currency
+              title="Waluta do przeliczenia"
+              ratesData={ratesData}
+              currency={inCurrency}
+              setCurrency={setInCurrency}
+            />
+            <Amount
+              title="Wprowadź kwotę"
+              amount={amount}
+              setAmount={setAmount}
+            />
+            <Currency
+              title="Przelicz na walutę"
+              ratesData={ratesData}
+              currency={outCurrency}
+              setCurrency={setOutCurrency}
+            />
+            <Result title="Kurs wymiany: " rate={rate} result={result} />
+            <Footer ratesData={ratesData} />
+          </>
+        )}
       </Field>
     </form>
   );

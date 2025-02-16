@@ -16,26 +16,22 @@ const Currency = ({
   setCurrency,
 }: CurrencyProps) => {
   return (
-    <>
-      {ratesData.status === "success" && (
-        <p>
-          <label>
-            <Title>{title}</Title>
-            <SelectCurrency
-              value={currency}
-              onChange={({ target }) => setCurrency(target.value)}
-            >
-              {ratesData.data &&
-                Object.keys(ratesData.data).map((currency) => (
-                  <option key={currency} value={currency}>
-                    {currency}
-                  </option>
-                ))}
-            </SelectCurrency>
-          </label>
-        </p>
-      )}
-    </>
+    <p>
+      <label>
+        <Title>{title}</Title>
+        <SelectCurrency
+          value={currency}
+          onChange={({ target }) => setCurrency(target.value)}
+        >
+          {ratesData.data &&
+            Object.keys(ratesData.data).map((currency) => (
+              <option key={currency} value={currency}>
+                {currency}
+              </option>
+            ))}
+        </SelectCurrency>
+      </label>
+    </p>
   );
 };
 
