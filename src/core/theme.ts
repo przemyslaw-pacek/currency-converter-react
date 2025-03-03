@@ -3,7 +3,7 @@ export const theme = {
     white: "#ffffff",
     yellow: "#ffff00",
     tainoi: "#FFC864",
-    blackTransparent: "rgba(60, 60, 60, 0.65)",
+    blackTransparent: "#3C3C3CA6",
     mongoose: "#b6ac7a",
   },
 } as const;
