@@ -12,7 +12,7 @@ const Footer = ({ ratesData }: FooterProps) => {
 
   return (
     <Info>
-      Kursy walut pobierane są z Currency API.
+      Kursy walut pobierane są z&nbsp;Currency API.
       <br />
       Aktualne na dzień: <Format>{formatDate}</Format>
     </Info>
