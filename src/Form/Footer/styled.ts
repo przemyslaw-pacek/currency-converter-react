@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Info = styled.p`
-  font-size: medium;
+  font-size: 14px;
   text-align: center;
 `;
 

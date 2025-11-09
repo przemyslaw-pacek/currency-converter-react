@@ -5,10 +5,10 @@ export const Field = styled.fieldset`
   background: ${({ theme }) => theme.color.blackTransparent};
   border: 1px solid;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 510px;
   padding: 0 25px;
   margin: 100px auto;
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 export const Header = styled.legend`
@@ -16,7 +16,7 @@ export const Header = styled.legend`
   border: 1px solid;
   border-radius: 8px;
   padding: 5px;
-  font-size: 22px;
+  font-size: 20px;
 `;
 
 export const Loading = styled.div`

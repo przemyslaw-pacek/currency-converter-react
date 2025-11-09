@@ -24,5 +24,5 @@ export const Title = styled.span`
   max-width: 240px;
   display: inline-block;
   margin: 0 14px 0 3px;
-  font-size: 20px;
+  font-size: 18px;
 `;
